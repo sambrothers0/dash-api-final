@@ -1,0 +1,12 @@
+# AI was used to create this file, to make our repository compatible with render
+services:
+  - type: web
+    name: dash-demo
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:server
+    autoDeploy: true
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
